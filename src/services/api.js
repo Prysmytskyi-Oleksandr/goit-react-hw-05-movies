@@ -25,3 +25,13 @@ export const fetchMoviesSerch = async searchName => {
   });
   return data.results;
 };
+
+export const fetchMoviesCastById = async id => {
+  const { data } = await instance.get(`/movie/${id}/credits`);
+  return data.cast;
+};
+
+export const fetchMoviesReviewsById = async id => {
+  const { data } = await instance.get(`/movie/${id}/reviews`);
+  return data.results;
+};

@@ -1,30 +1,34 @@
 import { fetchMoviesSerch } from 'services/api';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const searchName = searchParams.get('searchName');
+  console.log(searchName);
 
   useEffect(() => {
-    if (!movies.searchName) {
+    if (!searchName) {
       return;
     }
-    fetchMoviesSerch(movies.searchName).then(setMovies);
-  }, [movies.searchName]);
+    fetchMoviesSerch(searchName).then(setMovies);
+  }, [searchName]);
 
   const handleSubmit = event => {
     event.preventDefault();
     const onform = event.currentTarget;
-    setMovies({ searchName: onform.elements.searchName.value });
+    setSearchParams({ searchName: onform.elements.searchName.value });
     onform.reset(movies);
   };
 
-  const elList = movies.map(movie => (
+  const moviesList = movies.map(movie => (
     <Link key={movie.id} to={`/movies/${movie.id}`}>
       <li>{movie.title}</li>
     </Link>
   ));
-  console.log(elList);
+  console.log(moviesList);
 
   return (
     <>
@@ -32,7 +36,7 @@ const MoviesPage = () => {
         <input type="text" name="searchName"></input>
         <button type="Submit">Search</button>
       </form>
-      <ul>{elList}</ul>
+      <ul>{moviesList}</ul>
     </>
   );
 };
