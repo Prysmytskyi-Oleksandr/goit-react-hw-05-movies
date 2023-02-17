@@ -1,6 +1,6 @@
 import { fetchMoviesSerch } from 'services/api';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useSearchParams } from 'react-router-dom';
 
 const MoviesPage = () => {
@@ -16,6 +16,8 @@ const MoviesPage = () => {
     fetchMoviesSerch(searchName).then(setMovies);
   }, [searchName]);
 
+  const location = useLocation();
+
   const handleSubmit = event => {
     event.preventDefault();
     const onform = event.currentTarget;
@@ -24,7 +26,7 @@ const MoviesPage = () => {
   };
 
   const moviesList = movies.map(movie => (
-    <Link key={movie.id} to={`/movies/${movie.id}`}>
+    <Link key={movie.id} to={`/movies/${movie.id}`} state={{ from: location }}>
       <li>{movie.title}</li>
     </Link>
   ));

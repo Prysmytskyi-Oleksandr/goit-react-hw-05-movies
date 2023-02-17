@@ -1,10 +1,19 @@
 import { useState, useEffect } from 'react';
 import { fetchMoviesDetailsById } from 'services/api';
-import { Link, useParams, useNavigate, Outlet } from 'react-router-dom';
+import {
+  Link,
+  useParams,
+  useNavigate,
+  Outlet,
+  useLocation,
+} from 'react-router-dom';
 
 const MovieDetailsPage = () => {
   const [movieDetails, setMovieDetails] = useState();
   const { id } = useParams();
+
+  const location = useLocation();
+  const from = location.state?.from || '/';
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -23,7 +32,7 @@ const MovieDetailsPage = () => {
     <>
       {movieDetails && (
         <>
-          <button type="button" onClick={() => navigate(-1)}>
+          <button type="button" onClick={() => navigate(from)}>
             Go back
           </button>
           <div>
@@ -49,11 +58,15 @@ const MovieDetailsPage = () => {
             <h2>Additional information</h2>
             <ul>
               <li>
-                <Link to="cast">Cast</Link>
+                <Link to="cast" state={{ from }}>
+                  Cast
+                </Link>
               </li>
 
               <li>
-                <Link to="reviews">Reviews</Link>
+                <Link to="reviews" state={{ from }}>
+                  Reviews
+                </Link>
               </li>
             </ul>
           </div>

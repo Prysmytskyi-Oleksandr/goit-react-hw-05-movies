@@ -22,11 +22,14 @@ const CastPage = () => {
 
   const element = cast.map(({ id, name, character, profile_path }) => (
     <li key={id}>
-      <img
-        src={`https://image.tmdb.org/t/p/w500/${profile_path}`}
-        alt="foto"
-        width="150"
-      />
+      {profile_path && (
+        <img
+          src={`https://image.tmdb.org/t/p/w500/${profile_path}`}
+          alt="foto"
+          width="150"
+        />
+      )}
+
       <p>{name}</p>
       <p>{character}</p>
     </li>
