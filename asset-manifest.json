@@ -1,13 +1,27 @@
 {
   "files": {
     "main.css": "/goit-react-hw-05-movies/static/css/main.7acaea2f.css",
-    "main.js": "/goit-react-hw-05-movies/static/js/main.6006baad.js",
+    "main.js": "/goit-react-hw-05-movies/static/js/main.881c49f8.js",
+    "static/js/983.66277d15.chunk.js": "/goit-react-hw-05-movies/static/js/983.66277d15.chunk.js",
+    "static/js/797.c5c62204.chunk.js": "/goit-react-hw-05-movies/static/js/797.c5c62204.chunk.js",
+    "static/js/602.828b795f.chunk.js": "/goit-react-hw-05-movies/static/js/602.828b795f.chunk.js",
+    "static/js/631.5a1c526d.chunk.js": "/goit-react-hw-05-movies/static/js/631.5a1c526d.chunk.js",
+    "static/js/642.98e93077.chunk.js": "/goit-react-hw-05-movies/static/js/642.98e93077.chunk.js",
+    "static/js/520.d05157ef.chunk.js": "/goit-react-hw-05-movies/static/js/520.d05157ef.chunk.js",
+    "static/js/396.43c8ad04.chunk.js": "/goit-react-hw-05-movies/static/js/396.43c8ad04.chunk.js",
     "index.html": "/goit-react-hw-05-movies/index.html",
     "main.7acaea2f.css.map": "/goit-react-hw-05-movies/static/css/main.7acaea2f.css.map",
-    "main.6006baad.js.map": "/goit-react-hw-05-movies/static/js/main.6006baad.js.map"
+    "main.881c49f8.js.map": "/goit-react-hw-05-movies/static/js/main.881c49f8.js.map",
+    "983.66277d15.chunk.js.map": "/goit-react-hw-05-movies/static/js/983.66277d15.chunk.js.map",
+    "797.c5c62204.chunk.js.map": "/goit-react-hw-05-movies/static/js/797.c5c62204.chunk.js.map",
+    "602.828b795f.chunk.js.map": "/goit-react-hw-05-movies/static/js/602.828b795f.chunk.js.map",
+    "631.5a1c526d.chunk.js.map": "/goit-react-hw-05-movies/static/js/631.5a1c526d.chunk.js.map",
+    "642.98e93077.chunk.js.map": "/goit-react-hw-05-movies/static/js/642.98e93077.chunk.js.map",
+    "520.d05157ef.chunk.js.map": "/goit-react-hw-05-movies/static/js/520.d05157ef.chunk.js.map",
+    "396.43c8ad04.chunk.js.map": "/goit-react-hw-05-movies/static/js/396.43c8ad04.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7acaea2f.css",
-    "static/js/main.6006baad.js"
+    "static/js/main.881c49f8.js"
   ]
 }
