@@ -43,7 +43,7 @@ const MoviesPage = () => {
           placeholder="Еnter the name of the movie"
           className={styles.input}
         ></input>
-        <button type="Submit" className={styles.btn}>
+        <button type="Submit" className={styles.btnInput}>
           Search
         </button>
       </form>
