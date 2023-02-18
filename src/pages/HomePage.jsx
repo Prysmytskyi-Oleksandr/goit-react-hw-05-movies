@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { fetchMoviesTrending } from 'services/api';
+import { fetchMoviesTrending } from 'services/API';
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);

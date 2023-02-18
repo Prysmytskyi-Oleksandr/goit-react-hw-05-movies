@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { fetchMoviesReviewsById } from 'services/api';
+import styles from './reviewsPage.module.css';
+
+import { fetchMoviesReviewsById } from 'services/API';
 
 const ReviewsPage = () => {
   const [reviews, setReviews] = useState([]);
@@ -28,11 +30,11 @@ const ReviewsPage = () => {
   ));
 
   return (
-    <>
+    <ul className={styles.list}>
       {element.length === 0
         ? "We don't have any reviews for this movie"
         : element}
-    </>
+    </ul>
   );
 };
 export default ReviewsPage;

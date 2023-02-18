@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
-import { fetchMoviesDetailsById } from 'services/api';
+import { fetchMoviesDetailsById } from 'services/API';
 import {
-  Link,
+  NavLink,
   useParams,
   useNavigate,
   Outlet,
   useLocation,
 } from 'react-router-dom';
+
+import styles from './movieDetailsPage.module.css';
 
 const MovieDetailsPage = () => {
   const [movieDetails, setMovieDetails] = useState();
@@ -31,15 +33,19 @@ const MovieDetailsPage = () => {
   return (
     <>
       {movieDetails && (
-        <>
-          <button type="button" onClick={() => navigate(from)}>
+        <div className={styles.wrapper}>
+          <button
+            type="button"
+            onClick={() => navigate(from)}
+            className={styles.btn}
+          >
             Go back
           </button>
-          <div>
+          <div className={styles.infMovie}>
             <img
               src={`https://image.tmdb.org/t/p/w500/${movieDetails?.poster_path}`}
               alt="poster"
-              width="250"
+              width="200"
             />
             <section>
               <h2>{movieDetails?.title}</h2>
@@ -56,22 +62,26 @@ const MovieDetailsPage = () => {
           </div>
           <div>
             <h2>Additional information</h2>
-            <ul>
+            <ul className={styles.list}>
               <li>
-                <Link to="cast" state={{ from }}>
+                <NavLink to="cast" state={{ from }} className={styles.navLink}>
                   Cast
-                </Link>
+                </NavLink>
               </li>
 
               <li>
-                <Link to="reviews" state={{ from }}>
+                <NavLink
+                  to="reviews"
+                  state={{ from }}
+                  className={styles.navLink}
+                >
                   Reviews
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </div>
           <Outlet />
-        </>
+        </div>
       )}
     </>
   );

@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { fetchMoviesCastById } from 'services/api';
+import styles from './castPage.module.css';
+
+import { fetchMoviesCastById } from 'services/API';
 
 const CastPage = () => {
   const [cast, setCast] = useState([]);
@@ -26,7 +28,7 @@ const CastPage = () => {
         <img
           src={`https://image.tmdb.org/t/p/w500/${profile_path}`}
           alt="foto"
-          width="150"
+          width="100"
         />
       )}
 
@@ -37,7 +39,9 @@ const CastPage = () => {
 
   return (
     <>
-      <ul>{element.length === 0 ? "We don't have any foto" : element}</ul>
+      <ul className={styles.list}>
+        {element.length === 0 ? "We don't have any foto" : element}
+      </ul>
     </>
   );
 };

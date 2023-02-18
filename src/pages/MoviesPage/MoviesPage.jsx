@@ -1,7 +1,9 @@
-import { fetchMoviesSerch } from 'services/api';
+import { fetchMoviesSerch } from 'services/API';
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useSearchParams } from 'react-router-dom';
+
+import styles from './moviesPage.module.css';
 
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
@@ -34,9 +36,16 @@ const MoviesPage = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <input type="text" name="searchName"></input>
-        <button type="Submit">Search</button>
+      <form onSubmit={handleSubmit} className={styles.form}>
+        <input
+          type="text"
+          name="searchName"
+          placeholder="Еnter the name of the movie"
+          className={styles.input}
+        ></input>
+        <button type="Submit" className={styles.btn}>
+          Search
+        </button>
       </form>
       <ul>{moviesList}</ul>
     </>
