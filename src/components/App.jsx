@@ -14,7 +14,7 @@ const NotFoundPage = lazy(() => import('pages/NotFoundPage'));
 
 export const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="goit-react-hw-05-movies">
       <nav className={styles.navBar}>
         <NavLink to="/" className={styles.navLink}>
           Home
